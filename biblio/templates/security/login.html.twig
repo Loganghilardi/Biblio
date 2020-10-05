@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Connexion a l'espace admin</h1>
+
+    <form action="{{ path('security_login')}}" method="POST">
+        <input type="text" placeholder="Adresse Email" required name="_username">
+        <input type="password" placeholder="mot de passe" required name="_password">
+        <button type="submit">Connexion</button>
+
+
+    </form>
+
+{% endblock %}

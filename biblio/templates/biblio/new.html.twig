@@ -1,0 +1,48 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if app.user %}
+
+<h1>
+    {% if editmode  %}
+    Modifier un Livre
+    {% else %}
+    Ajout d'un Livre
+    {% endif %}
+</h1>
+
+{{form_start(formLivre)}}
+
+
+
+
+{{ form_row(formLivre.title, {'label': "Titre", 'attr': {'placeholder':"Titre du Livre"}}) }}
+{{ form_row(formLivre.content, {'label': "Résumé", 'attr': {'placeholder':"Résumé du Livre"}}) }}
+{{ form_row(formLivre.image, {'label': "URL de l'image", 'attr': {'placeholder':"URL de l'image"}}) }}
+{{ form_row(formLivre.auteur, {'label': "Nom de l'Auteur", 'attr': {'placeholder':"Nom de l'auteur"}}) }}
+{{ form_row(formLivre.dateEdition, {'label': "Date de l'Edition", 'attr': {'placeholder':"Année Format YYYY"}}) }}
+{{ form_row(formLivre.category, {'label': "Catégorie"}) }}
+
+
+
+
+
+
+<button class="submitNew" type="submit" >
+    {% if editmode  %}
+    Enregistrer les modifications
+    {% else %}
+    Ajouter le Livre
+    {% endif %}
+</button>
+
+{{ form_end(formLivre)}}
+
+{% else %}
+
+<h3>Vous n'êtes pas connecté, merci de vous   <a href="{{path('security_login')}}">authentifier</a>,
+si vous n'avez pas de compte c'est que vous n'avez rien a faire ici! <a href="{{path('biblio')}}">Cliquez ici </a> pour revenir a la bibliothèque.
+</h3>
+{% endif %}
+{% endblock %}

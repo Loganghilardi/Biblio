@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<article>
+    <h2>Titre du Livre : {{livre.title}}</h2>
+    <p ><strong> Nom de l'Auteur :</strong> {{livre.auteur}}</p>
+    <p> <strong> Date d'Edition :  </strong> {{livre.dateEdition}}
+    </p>
+    <img class="imgLivre" src="{{livre.image}}" alt="">
+    <hr>
+ <p> <strong>  Date d'ajout/de la dernière modification  sur le site: </strong>{{livre.createdAt | date('d/m/y')}} </p>
+    <p> <strong>Résumé du livre :</strong> <br>   {{livre.content | raw}}
+    </p>
+   <p> <strong> Catégorie : </strong> {{ livre.category.title }} </p>
+
+
+</article>
+
+<hr>
+<h1>Commentaires:</h1>
+<section id="commentaires">
+    {% for comment in livre.comments %}
+    <div class="comment">
+        <div>
+          <h4>De:  {{comment.author}}<br> Le:
+            {{comment.createdAt | date('d/m/y')}} </h4>
+
+        </div>
+        <div>
+           <p> {{comment.content | raw}}</p>
+        </div>
+
+    </div>
+    {% endfor %}
+    <div class="formComment">
+        <h5>Si vous souhaitez laissez un commentaire à propos du livre:</h5>
+    {{form_start(commentForm)}}
+    {{ form_row(commentForm.author, {'label': "Votre nom", 'attr': {'placeholder':"Votre nom"}}) }}
+    {{ form_row(commentForm.content, {'label': "Votre commentaire", 'attr': {'placeholder':"Votre commentaire"}}) }}
+
+
+
+    <button type="submit">Envoyer</button>
+
+    {{form_end(commentForm)}}
+</div>
+{% if app.user %}
+<div class="buttonLivre">
+<h2>Si vous souhaitez supprimer ou modifier ce livre : <a href="{{ path('biblio_delete', {'id' : livre.id}) }}"><button class="supp">Supprimer le livre</button></a>
+    <a href="{{ path('biblio_edit', {'id' : livre.id}) }}"><button class="modif">Modifier le livre</button></a></h2>
+    <small>Attention, si vous cliquez sur supprimer le livre sera directement supprimé</small>
+
+
+</div>
+{% endif %}
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Biblio!{% endblock %}
+
+{% block body %}
+<section class="livres">
+    {% for livre in livres %}
+    <article class="livre">
+        <h2>Titre du Livre : {{livre.title}}</h2>
+        <h5>Nom de l'Auteur : {{livre.auteur}}</h5>
+        <img src="{{livre.image}}" alt="">
+        <p>Catégorie : {{livre.category.title }}</p>
+            <a href="{{ path('biblio_plus', {'id' : livre.id}) }}"><button>En savoir plus</button></a> 
+
+    </article>
+   {% endfor %}
+</section>
+{% endblock %}
+ 

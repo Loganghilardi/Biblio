@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<h1>Création de compte :</h1>
+{{ form_start(form)}}
+{{ form_row(form.username, {'label': "Identifiant", 'attr': {'placeholder':"Identifiant"}}) }}
+{{ form_row(form.email, {'label': "Email", 'attr': {'placeholder':"Email"}}) }}
+{{ form_row(form.password, {'label': "Mot de passe", 'attr': {'placeholder':"Mot de Passe"}}) }}
+{{ form_row(form.confirm_password, {'label': "Confirmation ", 'attr': {'placeholder':"Mot de Passe"}}) }}
+
+
+<button type="submit">Valider la création</button>
+{{form_end(form)}}
+
+{% endblock %} 

@@ -1,0 +1,120 @@
+#navigation {
+    margin: 0 ;
+    padding: 0 ;
+    list-style: none ;
+    text-align: center ;
+  }
+  #navigation li {
+    display: inline ;
+    margin-right: 1px ;
+    color: #fff ;
+    background: #778899 ;
+  }
+  #navigation li a {
+    padding: 4px 20px ;
+    background: #6c7c8b ;
+    color: #fff ;
+    border: 1px solid #778899 ;
+    border-radius: 4px;
+
+    line-height: 1em ;
+    text-align: center ;
+    text-decoration: none ;
+  }
+  #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
+    background: #778899 ;
+    border: #6c7c8b solid 2px;
+    text-decoration: none ;
+  }
+header{
+    background-color: #778899;
+    padding: 15px;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+margin: 3vh;
+padding: 1vh;
+background-color: rgb(236, 236, 236);
+border-radius: 10px;
+}
+
+label{
+  display: block; 
+  width: 150px;
+  float: left;
+}
+.livre{
+  border-radius: 10px;
+  padding: 1%;
+  width: 250px;
+  margin: 1%;
+  background-color: white;
+}
+.livre>img{
+
+  height: 200px;
+  width: 200px;
+ display: block;
+ margin: auto;
+ padding: auto;
+}
+.livres{
+  display: flex;
+  flex-wrap: wrap;
+}
+.comment{
+  border: grey solid 1px;
+  border-radius: 5px;
+  margin: 2px;
+  background-color: white;
+}
+.formComment{
+  border: grey solid 1px;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 2px;
+
+}
+button{
+  background-color:   lightslategray;
+  color: white;
+  border: solid lightslategray 1px;
+  margin: 5px;
+  padding: 5px;
+}
+button:hover{
+  background-color: #5d6b78 ;
+
+}
+.buttonLivre{
+  padding: 15px;
+  border: grey solid 1px;
+  border-radius: 5px;
+  margin: 2px;
+}
+.buttonLivre button{
+  background-color:   lightslategray;
+  color: white;
+  border: solid lightslategray 1px;
+  margin: 5px;
+  padding: 5px;
+}
+.modif:hover{
+  background-color: #5d6b78 ;
+
+
+}
+.supp:hover{
+  background-color: red;
+  
+}
+.imgLivre{
+  width: 300px;
+  height: 450px;
+}
+.deco{
+  background-color: lightcoral;
+}
